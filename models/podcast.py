@@ -9,13 +9,19 @@ class Podcast():
     def follow(self):
         pass
 
-    def add_to_users_episodes():
+    def add_to_users_episodes(self):
         pass
 
 
 class Episode():
 
     def __init__(self, lyrics_transcription, transcript):
-        
+
         self.lyrics_transcription = lyrics_transcription
         self.transcript = transcript
+
+    def next_episode(self):
+        pass
+
+    def add_to_users_episodes(self):
+        pass

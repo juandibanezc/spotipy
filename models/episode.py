@@ -2,28 +2,25 @@ from spotipy import Spotipy
 from multimedia import Multimedia
 
 
-class Song(Spotipy, Multimedia):
-    
-    def __init__(self, name, duration_ms, image, liked, playing, lyrics, reproductions):
+class Episode(Spotipy, Multimedia):
+
+    def __init__(self, name, duration_ms, image, liked, playing, description, transcript, audio):
         super().__init__(name, duration_ms, image)
         self.liked = liked
         self.playing = playing
-        self.reproductions = reproductions
-        self.lyrics = lyrics
+        self.description = description
+        self.transcript = transcript
+        self.audio = audio
 
-    def shuffle(self):
+    # Defined self methods of the class Episode
+
+    def next_episode(self):
         pass
 
-    def repeat(self):
+    def add_to_users_episodes(self):
         pass
 
-    def see_artist(self):
-        pass
-
-    def go_to_radio(self):
-        pass
-
-    # from Spotipy class
+    # Defined first heritance methods Spotipy
 
     def share(self):
         return super().share()
@@ -37,7 +34,7 @@ class Song(Spotipy, Multimedia):
     def like(self):
         return super().like()
     
-    # From multimedia class
+    # Defined second heritance methods Multimedia
 
     def next(self):
         return super().next()

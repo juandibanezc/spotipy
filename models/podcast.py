@@ -1,27 +1,19 @@
+from episode import Episode
 
-
-
-class Podcast():
-    def __init__(self, about, tags):
-        self.about = about
+class Podcast:
+    def __init__(self, description, name, image, episodes, tags):
+        self.description = description
+        self.name = name
+        self.image = image
+        self.episodes = episodes
         self.tags = tags
+
 
     def follow(self):
         pass
 
-    def add_to_users_episodes(self):
+    def share(self):
         pass
 
-
-class Episode():
-
-    def __init__(self, lyrics_transcription, transcript):
-
-        self.lyrics_transcription = lyrics_transcription
-        self.transcript = transcript
-
-    def next_episode(self):
-        pass
-
-    def add_to_users_episodes(self):
+    def see_all_episodes(self):
         pass

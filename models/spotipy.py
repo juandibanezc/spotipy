@@ -1,8 +1,10 @@
+from .files import JPEGFile
+
 class Spotipy:
-    def __init__(self, name, duration_ms, image):
+    def __init__(self, name: str, duration_ms: int, file_path: str):
         self.name = name
         self.duration_ms = duration_ms
-        self.image = image
+        self.image = JPEGFile(file_path)
 
     def share(self):
         pass
@@ -13,5 +15,6 @@ class Spotipy:
     def play(self):
         pass
 
-    def like(self):
-        pass
+    def like(self) -> None:
+        
+        self.liked = not self.liked

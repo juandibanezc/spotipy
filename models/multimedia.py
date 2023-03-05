@@ -1,7 +1,10 @@
+from .files import MP3File
+
 class Multimedia:
-    def __init__(self, liked, playing):
+    def __init__(self, liked: bool, playing: bool, file_path: str):
         self.liked = liked
         self.playing = playing
+        self.audio = MP3File(file_path)
 
     def next(self):
         pass

@@ -1,15 +1,14 @@
-from spotipy import Spotipy
-from multimedia import Multimedia
+from models.spotipy import Spotipy
+from models.multimedia import Multimedia
 
 
 class Song(Spotipy, Multimedia):
     
-    def __init__(self, name, duration_ms, image, liked, playing, lyrics, reproductions):
-        super().__init__(name, duration_ms, image)
-        self.liked = liked
-        self.playing = playing
+    def __init__(self, name, duration_ms, audio_file_path, image_file_path,
+                  liked = False, playing = False, reproductions = 0):
+        Spotipy.__init__(self, name=name, duration_ms=duration_ms, file_path=image_file_path)
+        Multimedia.__init__(self, liked=liked, playing=playing, file_path=audio_file_path)
         self.reproductions = reproductions
-        self.lyrics = lyrics
 
     def shuffle(self):
         pass
@@ -32,7 +31,7 @@ class Song(Spotipy, Multimedia):
         return super().download()
     
     def play(self):
-        return super().play()
+        return self.audio.play()
     
     def like(self):
         return super().like()

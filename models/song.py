@@ -4,7 +4,7 @@ from models.multimedia import Multimedia
 
 class Song(Spotipy, Multimedia):
     
-    def __init__(self, name, duration_ms, audio_file_path, image_file_path,
+    def __init__(self, name, duration_ms, audio_file_path = None, image_file_path = None,
                   liked = False, playing = False, reproductions = 0):
         Spotipy.__init__(self, name=name, duration_ms=duration_ms, file_path=image_file_path)
         Multimedia.__init__(self, liked=liked, playing=playing, file_path=audio_file_path)

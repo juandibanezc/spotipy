@@ -1,17 +1,23 @@
-from spotipy import Spotipy
+from .spotipy import Spotipy
+from .song import Song
+from .queue import Queue
+from typing import List
 
 class Album(Spotipy):
 
-    def __init__(self, name, duration_ms, image, release_year, songs, total_songs, album_type):
-        super().__init__(name, duration_ms, image)
+    def __init__(self, name: str, duration_ms: int = None, file_path: str = None, release_year: str = None, songs: List[Song] = None, album_type: str = None):
+        super().__init__(name, duration_ms, file_path)
 
         self.release_year = release_year
         self.songs = songs
-        self.total_songs = total_songs
+        self.total_songs = len(songs)
         self.album_type = album_type
 
     def play(self):
-        return super().play()
+        
+        album_queue = Queue(self.songs)
+
+        return album_queue.play()
     
     def share(self):
         return super().share()

@@ -4,10 +4,9 @@ from multimedia import Multimedia
 
 class Episode(Spotipy, Multimedia):
 
-    def __init__(self, name, duration_ms, image, liked, playing, description, transcript, audio):
-        super().__init__(name, duration_ms, image)
-        self.liked = liked
-        self.playing = playing
+    def __init__(self, name, duration_ms, liked, playing, description, transcript, audio, file_path):
+        Spotipy.__init__(self, name, duration_ms, file_path)
+        Multimedia.__init__(self, liked, playing, file_path)
         self.description = description
         self.transcript = transcript
         self.audio = audio

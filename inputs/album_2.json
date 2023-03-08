@@ -1,116 +1,72 @@
 {
-    "name": "Un Verano Sin Ti",
-    "duration_ms": 4911162,
+    "name": "Balas Perdidas",
+    "duration_ms": 2469034,
     "songs": [
         {
-            "name": "Moscow Mule",
-            "duration_ms": 245939
+            "name": "Otras Se Pierden",
+            "duration_ms": 234656
         },
         {
-            "name": "Despu\u00e9s de la Playa",
-            "duration_ms": 230400
+            "name": "Acu\u00e9rdate De M\u00ed",
+            "duration_ms": 221063
         },
         {
-            "name": "Me Porto Bonito",
-            "duration_ms": 178567
+            "name": "Besos En Guerra",
+            "duration_ms": 231532
         },
         {
-            "name": "Tit\u00ed Me Pregunt\u00f3",
-            "duration_ms": 243716
+            "name": "Cuando El Amor Se Escapa",
+            "duration_ms": 176121
         },
         {
-            "name": "Un Ratito",
-            "duration_ms": 176936
+            "name": "No Se Va",
+            "duration_ms": 216752
         },
         {
-            "name": "Yo No Soy Celoso",
-            "duration_ms": 230704
+            "name": "Mi Vida Entera",
+            "duration_ms": 214831
         },
         {
-            "name": "Tarot",
-            "duration_ms": 237894
+            "name": "El Embrujo",
+            "duration_ms": 238780
         },
         {
-            "name": "Neverita",
-            "duration_ms": 173119
+            "name": "Yo No Merezco Volver",
+            "duration_ms": 220155
         },
         {
-            "name": "La Corriente",
-            "duration_ms": 198367
+            "name": "Maldita Costumbre",
+            "duration_ms": 165786
         },
         {
-            "name": "Efecto",
-            "duration_ms": 213061
+            "name": "Cuando Nadie Ve",
+            "duration_ms": 219586
         },
         {
-            "name": "Party",
-            "duration_ms": 227628
+            "name": "Punto Y Aparte",
+            "duration_ms": 211045
         },
         {
-            "name": "Aguacero",
-            "duration_ms": 210989
-        },
-        {
-            "name": "Ens\u00e9\u00f1ame a Bailar",
-            "duration_ms": 176000
-        },
-        {
-            "name": "Ojitos Lindos",
-            "duration_ms": 258298
-        },
-        {
-            "name": "Dos Mil 16",
-            "duration_ms": 208615
-        },
-        {
-            "name": "El Apag\u00f3n",
-            "duration_ms": 201816
-        },
-        {
-            "name": "Otro Atardecer",
-            "duration_ms": 244444
-        },
-        {
-            "name": "Un Coco",
-            "duration_ms": 196412
-        },
-        {
-            "name": "Andrea",
-            "duration_ms": 339611
-        },
-        {
-            "name": "Me Fui de Vacaciones",
-            "duration_ms": 180929
-        },
-        {
-            "name": "Un Verano Sin Ti",
-            "duration_ms": 148143
-        },
-        {
-            "name": "Agosto",
-            "duration_ms": 139041
-        },
-        {
-            "name": "Callaita",
-            "duration_ms": 250533
+            "name": "11 Besos",
+            "duration_ms": 118727
         }
     ],
-    "release_date": "2022-05-06",
+    "release_date": "2018-10-25",
     "album_type": "album",
     "images": [
         {
             "height": 640,
-            "url": "https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72",
+            "url": "https://i.scdn.co/image/ab67616d0000b27390fa215e791c13fe9bacb8bc",
             "width": 640
         },
         {
             "height": 300,
-            "url": "https://i.scdn.co/image/ab67616d00001e0249d694203245f241a1bcaa72",
+            "url": "https://i.scdn.co/image/ab67616d00001e0290fa215e791c13fe9bacb8bc",
             "width": 300
         },
         {
             "height": 64,
-            "url": "https://i.scdn.co/image/ab67616d0000485149d694203245f241a1bcaa72",
+            "url": "https://i.scdn.co/image/ab67616d0000485190fa215e791c13fe9bacb8bc",
             "width": 64
         }
     ]

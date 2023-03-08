@@ -1,4 +1,7 @@
 from .files import JPEGFile
+from .song import Song
+from .episode import Episode
+from typing import Union
 
 class Spotipy:
     def __init__(self, name: str, duration_ms: int, file_path: str):
@@ -12,8 +15,9 @@ class Spotipy:
     def download(self):
         pass
 
-    def play(self):
-        pass
+    def play(self, song: Union[Song,Episode]):
+        
+        song.audio.play()
 
     def like(self) -> None:
         

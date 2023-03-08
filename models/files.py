@@ -1,5 +1,4 @@
-from models.exceptions import InvalidAudioFile
-from models.exceptions import InvalidImageFile
+from .exceptions import InvalidAudioFile, InvalidImageFile
 
 class ImageFile:
     def __init__(self, file_path: str):
@@ -40,18 +39,8 @@ class OggFile(AudioFile):
 class PNGFile(ImageFile):
     ext = "png"
 
-    def play(self):
-        print("playing {} as png".format(self.filename))
-
 class JPEGFile(ImageFile):
     ext = "jpeg"
 
-    def play(self):
-        print("playing {} as jpeg".format(self.filename))
-
 class SVGFile(ImageFile):
     ext = "svg"
-
-    def play(self):
-        print("playing {} as svg".format(self.filename))
-        

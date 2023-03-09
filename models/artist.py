@@ -1,7 +1,9 @@
 
+
+
 class Artist:
 
-    def __init__(self, name, monthly_listeners, followers, albums, top_songs):
+    def __init__(self, name:str, monthly_listeners:int, followers:int, albums, top_songs):
         self.name = name
         self.monthly_listeners = monthly_listeners
         self.followers = followers

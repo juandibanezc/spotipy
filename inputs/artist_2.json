@@ -1,0 +1,99 @@
+{
+    "name": "Morat",
+    "popularity": 86,
+    "followers": 8214576,
+    "images": [
+        {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebeb27e0d833dcc24c376cb24c",
+            "width": 640
+        },
+        {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174eb27e0d833dcc24c376cb24c",
+            "width": 320
+        },
+        {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178eb27e0d833dcc24c376cb24c",
+            "width": 160
+        }
+    ],
+    "top_songs": [
+        {
+            "name": "No Se Va",
+            "duration_ms": 216752,
+            "artist": [
+                "Morat"
+            ]
+        },
+        {
+            "name": "Salir Con Vida",
+            "duration_ms": 176086,
+            "artist": [
+                "Morat",
+                "Feid"
+            ]
+        },
+        {
+            "name": "Cuando Nadie Ve",
+            "duration_ms": 219586,
+            "artist": [
+                "Morat"
+            ]
+        },
+        {
+            "name": "Deb\u00ed Suponerlo",
+            "duration_ms": 144631,
+            "artist": [
+                "Morat"
+            ]
+        },
+        {
+            "name": "Besos En Guerra",
+            "duration_ms": 231532,
+            "artist": [
+                "Morat",
+                "Juanes"
+            ]
+        },
+        {
+            "name": "506",
+            "duration_ms": 180552,
+            "artist": [
+                "Morat",
+                "Juanes"
+            ]
+        },
+        {
+            "name": "Par\u00eds",
+            "duration_ms": 182187,
+            "artist": [
+                "Morat",
+                "Duki"
+            ]
+        },
+        {
+            "name": "Segundos Platos",
+            "duration_ms": 184666,
+            "artist": [
+                "Morat"
+            ]
+        },
+        {
+            "name": "Porfa no te vayas",
+            "duration_ms": 209712,
+            "artist": [
+                "Beret",
+                "Morat"
+            ]
+        },
+        {
+            "name": "Aprender A Quererte",
+            "duration_ms": 229213,
+            "artist": [
+                "Morat"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "name": "Bad Bunny",
+    "popularity": 100,
+    "followers": 65642738,
+    "images": [
+        {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb8ee9a6f54dcbd4bc95126b14",
+            "width": 640
+        },
+        {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051748ee9a6f54dcbd4bc95126b14",
+            "width": 320
+        },
+        {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1788ee9a6f54dcbd4bc95126b14",
+            "width": 160
+        }
+    ],
+    "top_songs": [
+        {
+            "name": "La Jumpa",
+            "duration_ms": 255693,
+            "artist": [
+                "Arc\u00e1ngel",
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Me Porto Bonito",
+            "duration_ms": 178567,
+            "artist": [
+                "Bad Bunny",
+                "Chencho Corleone"
+            ]
+        },
+        {
+            "name": "Tit\u00ed Me Pregunt\u00f3",
+            "duration_ms": 243716,
+            "artist": [
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Gato de Noche",
+            "duration_ms": 227013,
+            "artist": [
+                "\u00d1engo Flow",
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Ojitos Lindos",
+            "duration_ms": 258298,
+            "artist": [
+                "Bad Bunny",
+                "Bomba Est\u00e9reo"
+            ]
+        },
+        {
+            "name": "Efecto",
+            "duration_ms": 213061,
+            "artist": [
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Neverita",
+            "duration_ms": 173119,
+            "artist": [
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Moscow Mule",
+            "duration_ms": 245939,
+            "artist": [
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "LA CANCI\u00d3N",
+            "duration_ms": 242573,
+            "artist": [
+                "J Balvin",
+                "Bad Bunny"
+            ]
+        },
+        {
+            "name": "Yonaguni",
+            "duration_ms": 206710,
+            "artist": [
+                "Bad Bunny"
+            ]
+        }
+    ]
+}

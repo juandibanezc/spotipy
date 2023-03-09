@@ -5,6 +5,7 @@ from models.album import Album
 from models.podcast import Podcast
 from random import shuffle
 from interactive_functions import *
+from models.artist import Artist
 
 f_1 = open('inputs/album_1.json')
 f_2 = open('inputs/album_2.json')
@@ -20,9 +21,6 @@ f_1.close()
 f_2.close()
 p_1.close()
 p_2.close()
-
-
-
 
 def run_app(play = False):
 

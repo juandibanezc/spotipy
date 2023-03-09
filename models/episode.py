@@ -1,5 +1,5 @@
-from spotipy import Spotipy
-from multimedia import Multimedia
+from .spotipy import Spotipy
+from .multimedia import Multimedia
 
 
 class Episode(Spotipy, Multimedia):

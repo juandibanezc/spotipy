@@ -48,6 +48,15 @@ def run_app(play = False):
      '2':second_album
   }
 
+  print('''
+  Library:
+  
+  1. Albums
+  2. Your Episodes
+  3. Playlist
+
+  ''')
+
   print(f'''
 
   You have two albums in Your Library:

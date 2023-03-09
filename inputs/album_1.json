@@ -1,98 +1,176 @@
 {
     "name": "Un Verano Sin Ti",
     "duration_ms": 4911162,
+    "author": "Bad Bunny",
     "songs": [
         {
             "name": "Moscow Mule",
-            "duration_ms": 245939
+            "duration_ms": 245939,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Despu\u00e9s de la Playa",
-            "duration_ms": 230400
+            "duration_ms": 230400,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Me Porto Bonito",
-            "duration_ms": 178567
+            "duration_ms": 178567,
+            "artist": [
+                "Bad Bunny",
+                "Chencho Corleone"
+            ]
         },
         {
             "name": "Tit\u00ed Me Pregunt\u00f3",
-            "duration_ms": 243716
+            "duration_ms": 243716,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Un Ratito",
-            "duration_ms": 176936
+            "duration_ms": 176936,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Yo No Soy Celoso",
-            "duration_ms": 230704
+            "duration_ms": 230704,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Tarot",
-            "duration_ms": 237894
+            "duration_ms": 237894,
+            "artist": [
+                "Bad Bunny",
+                "Jhayco"
+            ]
         },
         {
             "name": "Neverita",
-            "duration_ms": 173119
+            "duration_ms": 173119,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "La Corriente",
-            "duration_ms": 198367
+            "duration_ms": 198367,
+            "artist": [
+                "Bad Bunny",
+                "Tony Dize"
+            ]
         },
         {
             "name": "Efecto",
-            "duration_ms": 213061
+            "duration_ms": 213061,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Party",
-            "duration_ms": 227628
+            "duration_ms": 227628,
+            "artist": [
+                "Bad Bunny",
+                "Rauw Alejandro"
+            ]
         },
         {
             "name": "Aguacero",
-            "duration_ms": 210989
+            "duration_ms": 210989,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Ens\u00e9\u00f1ame a Bailar",
-            "duration_ms": 176000
+            "duration_ms": 176000,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Ojitos Lindos",
-            "duration_ms": 258298
+            "duration_ms": 258298,
+            "artist": [
+                "Bad Bunny",
+                "Bomba Est\u00e9reo"
+            ]
         },
         {
             "name": "Dos Mil 16",
-            "duration_ms": 208615
+            "duration_ms": 208615,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "El Apag\u00f3n",
-            "duration_ms": 201816
+            "duration_ms": 201816,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Otro Atardecer",
-            "duration_ms": 244444
+            "duration_ms": 244444,
+            "artist": [
+                "Bad Bunny",
+                "The Mar\u00edas"
+            ]
         },
         {
             "name": "Un Coco",
-            "duration_ms": 196412
+            "duration_ms": 196412,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Andrea",
-            "duration_ms": 339611
+            "duration_ms": 339611,
+            "artist": [
+                "Bad Bunny",
+                "Buscabulla"
+            ]
         },
         {
             "name": "Me Fui de Vacaciones",
-            "duration_ms": 180929
+            "duration_ms": 180929,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Un Verano Sin Ti",
-            "duration_ms": 148143
+            "duration_ms": 148143,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Agosto",
-            "duration_ms": 139041
+            "duration_ms": 139041,
+            "artist": [
+                "Bad Bunny"
+            ]
         },
         {
             "name": "Callaita",
-            "duration_ms": 250533
+            "duration_ms": 250533,
+            "artist": [
+                "Bad Bunny",
+                "Tainy"
+            ]
         }
     ],
     "release_date": "2022-05-06",

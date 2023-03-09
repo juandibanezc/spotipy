@@ -7,13 +7,16 @@ from .artist import Artist
 class Album(Spotipy):
 
     def __init__(self, name: str, duration_ms: int = None, file_path: str = '.jpeg', 
-                 release_year: str = None, songs: List[Song] = None, album_type: str = None, artist: Artist = None):
+                 release_year: str = None, songs: List[Song] = ['',''], album_type: str = None, artist: Artist = None):
         super().__init__(name, duration_ms, file_path)
         self.artist = artist
         self.release_year = release_year
         self.songs = songs
         self.total_songs = len(songs)
         self.album_type = album_type
+        
+    def __repr__(self) -> str:
+        return 'Album'
 
     def play(self):
         

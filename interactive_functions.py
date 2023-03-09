@@ -1,13 +1,19 @@
-def library():
+from models.album import Album
+from models.artist import Artist
+from models.podcast import Podcast
+from typing import Union
+
+def library() -> str:
   
   print('''
-        Library:
+      Library:
         
-        1. Albums
-        2. Your Episodes
-        3. Playlists
-        4. Liked Songs
-        5. Exit
+        1. Artists
+        2. Album
+        3. Liked Songs  
+        4. Playlists   
+        5. Your Episodes (Podcast)
+        6. Exit
   
   Select One Option
   ''')
@@ -15,3 +21,23 @@ def library():
   choice = input('> ')
   
   return choice
+
+def multi_selection(multi_selec:dict) -> str:
+      
+      ## Extract only one object of the option selected
+      class_object = multi_selec['1']
+      
+      print(f'''
+
+      You have two {class_object}s in Your Library:
+
+      1. {multi_selec['1'].name}
+      2. {multi_selec['2'].name}
+      
+      Select one podcast or:
+      
+      3. Back to the Library menu
+
+      ''')
+      
+      return input('>')

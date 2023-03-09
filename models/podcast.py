@@ -8,6 +8,10 @@ class Podcast:
         self.image = JPEGFile(image_file_path)
         self.episodes = episodes
         self.publisher = publisher
+        
+    
+    def __repr__(self) -> str:
+        return 'Podcast'
 
     def show(self):
         print('*** Podcast ***')

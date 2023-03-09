@@ -1,14 +1,18 @@
 from models.spotipy import Spotipy
 from models.multimedia import Multimedia
-
+from typing import List
+from .artist import Artist
 
 class Song(Spotipy, Multimedia):
     
     def __init__(self, name, duration_ms, audio_file_path = '.mp3', image_file_path = '.jpeg',
-                  liked = False, playing = False, reproductions = 0):
+                  liked = False, playing = False, reproductions = 0, artist:List[Artist] = None):
+        
         Spotipy.__init__(self, name=name, duration_ms=duration_ms, file_path=image_file_path)
+        
         Multimedia.__init__(self, liked=liked, playing=playing, file_path=audio_file_path)
         self.reproductions = reproductions
+        self.artist = artist
 
     def shuffle(self):
         pass

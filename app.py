@@ -4,6 +4,7 @@ import json
 from models.album import Album
 from models.podcast import Podcast
 from random import shuffle
+from interactive_functions import *
 
 f_1 = open('inputs/album_1.json')
 f_2 = open('inputs/album_2.json')
@@ -19,6 +20,9 @@ f_1.close()
 f_2.close()
 p_1.close()
 p_2.close()
+
+
+
 
 def run_app(play = False):
 
@@ -43,27 +47,34 @@ def run_app(play = False):
   print('')
   print('Welcome to Spotify')
 
-  # First, make a list of songs:
-  first_list = [Song(i['name'], i['duration_ms']) for i in bb_album['songs']]
+   
+  #instantiating all objects:
+  first_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in bb_album['songs']]
   first_album = Album(name = bb_album['name'], duration_ms=bb_album['duration_ms'], songs=first_list)
 
-  second_list = [Song(i['name'], i['duration_ms']) for i in morat_album['songs']]
+  second_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_album['songs']]
   second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list)
-
 
   albums_selections = {
      '1':first_album,
      '2':second_album
   }
-
-  print('''
-  Library:
   
-  1. Albums
-  2. Your Episodes
-  3. Playlist
-
-  ''')
+  
+  
+  
+  loop_ = True
+  while loop_:
+    choice = library()
+    
+    
+    
+    
+    
+    
+    if choice == '5':
+      loop_ = False
+      
 
   print(f'''
 

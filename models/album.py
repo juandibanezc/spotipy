@@ -20,7 +20,7 @@ class Album(Spotipy):
 
         return album_queue.play()
     
-    def show_album(self):
+    def show(self):
         j = 1
         for i in self.songs:
             print(f'{j}. {i.name}')

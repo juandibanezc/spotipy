@@ -71,7 +71,7 @@ def run_app(play = False):
   key = input('> ')
   albums_selection = albums_selections[key]
   print(f'These are the songs of {albums_selection.name}')
-  albums_selection.display_songs()
+  albums_selection.show()
   
 
   if play:

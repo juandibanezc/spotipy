@@ -4,9 +4,9 @@ from .multimedia import Multimedia
 
 class Episode(Spotipy, Multimedia):
 
-    def __init__(self, name:str, duration_ms: int, liked: bool, playing: bool, 
-                     description:str, image_file_path:str, audio_file_path:str):
-        Spotipy.__init__(self, name = name, duration_ms = duration_ms, image_file_path = image_file_path)
+    def __init__(self, name:str, duration_ms: int, description:str, image_file_path:str,
+                      audio_file_path:str, liked: bool = False, playing: bool = False):
+        Spotipy.__init__(self, name = name, duration_ms = duration_ms, file_path = image_file_path)
         Multimedia.__init__(self, liked = liked, playing = playing, file_path = audio_file_path)
         self.description = description
 

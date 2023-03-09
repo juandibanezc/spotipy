@@ -1,11 +1,11 @@
-from .files import PNGFile
+from .files import JPEGFile
 
 class Podcast:
     def __init__(self, description: str, name: str, duration_ms: int, image_file_path: str, episodes: list, publisher: str):
         self.description = description
         self.name = name
         self.duration_ms = duration_ms
-        self.image = PNGFile(image_file_path)
+        self.image = JPEGFile(image_file_path)
         self.episodes = episodes
         self.publisher = publisher
 
@@ -15,6 +15,7 @@ class Podcast:
         print('* Description:', self.description)
         print('* Total duration:', self.duration_ms)
         print('* Publisher:', self.publisher)
+        print('* Episodes:')
         j = 1
         for i in self.episodes:
             print(f'{j}. {i.name}')

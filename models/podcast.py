@@ -14,16 +14,14 @@ class Podcast:
         return 'Podcast'
 
     def show(self):
-        print('*** Podcast ***')
-        print('* Name:', self.name)
-        print('* Description:', self.description)
-        print('* Total duration:', self.duration_ms)
-        print('* Publisher:', self.publisher)
-        print('* Episodes:')
-        j = 1
-        for i in self.episodes:
-            print(f'{j}. {i.name}')
-            j = j+1
+        print('*** Podcast ***\n')
+        print('\n* Name:', self.name)
+        print('\n* Description:', self.description)
+        print('\n* Total duration:', self.duration_ms)
+        print('\n* Publisher:', self.publisher)
+        print('\n* Episodes:')
+        for i, episode in enumerate(self.episodes):
+            print(f'** {i+1}. {episode.name}')
 
     def follow(self):
         pass

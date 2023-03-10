@@ -3,7 +3,7 @@ from typing import List
 
 class Artist:
 
-    def __init__(self, name:str, popularity:int, followers:int, albums, top_songs):
+    def __init__(self, name:str, popularity:int, followers:int, albums: list, top_songs: list):
         self.name = name
         self.popularity = popularity
         self.followers = followers
@@ -18,11 +18,16 @@ class Artist:
         pass
     
     def show(self):
-        
-        j = 1
-        for i in self.top_songs:
-            print(f'{j}. {i.name}')
-            j = j+1
+        print('*** Artist ***\n')
+        print('\n* Name:', self.name)
+        print('\n* Popularity:', self.popularity)
+        print('\n* Followers:', self.followers)
+        print('\n* Albums:')
+        for i, album in enumerate(self.albums):
+            print(f'** {i+1}. {album.name}')
+        print('\n* Top songs:')
+        for i, song in enumerate(self.top_songs):
+            print(f'** {i+1}. {song.name}')
             
             
     def share(self):

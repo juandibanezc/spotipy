@@ -46,40 +46,41 @@ def run_app(play = False):
 ⠀⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠿⠿⠿⠿⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀
   
-  
   """)
   print('')
   print('Welcome to Spotify')
 
    
   #instantiating all objects:
+
+  # Albums and songs
   top_songs_1 = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in bb_artist['top_songs']]
   top_songs_2 = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_artist['top_songs']]
   
   first_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in bb_album['songs']]
-  first_album = Album(name = bb_album['name'], duration_ms=bb_album['duration_ms'], songs=first_list)
+  first_album = Album(name = bb_album['name'], duration_ms=bb_album['duration_ms'], songs=first_list, author=bb_album['author'], release_date=bb_album['release_date'], album_type=bb_album['album_type'], file_path=bb_album["images"][-1]["url"])
 
   second_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_album['songs']]
-  second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list)
+  second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list, author=morat_album['author'], release_date=morat_album['release_date'], album_type=morat_album['album_type'], file_path=morat_album["images"][-1]["url"])
   
   albums_selections = {
      '1':first_album,
      '2':second_album
   }
   
-  # Generating Artist objects
+  # Artists
   first_artist = Artist(name = bb_artist['name'], popularity=bb_artist['popularity'], 
-                        followers=bb_artist['followers'], albums=first_album, top_songs=top_songs_1)
+                        followers=bb_artist['followers'], albums=[first_album], top_songs=top_songs_1)
   
   second_artist = Artist(name = morat_artist['name'], popularity=morat_artist['popularity'], 
-                        followers=morat_artist['followers'], albums=second_album, top_songs=top_songs_2)
+                        followers=morat_artist['followers'], albums=[second_album], top_songs=top_songs_2)
   
   artist_selections = {
      '1':first_artist,
      '2':second_artist
   }
   
-    # Second, make a list of episodes:
+  # Podcasts and episodes
   first_list = [Episode(i['name'], i['duration_ms'], i['description'], i['image_file_path'], i['audio_file_path']) for i in podcast_1['episodes']]
   first_podcast = Podcast(podcast_1['description'], podcast_1['name'], podcast_1['duration_ms'], podcast_1['image_file_path'], first_list, podcast_1['publisher'])
 
@@ -111,7 +112,7 @@ def run_app(play = False):
       else:
         ### Aquí debe incluirse todo el tema de .show que
         ### sería el mismo método para todos, sea artist, podcast y album
-        pass
+        selection[selection_choice].show()
       
     else:
       loop_ = False

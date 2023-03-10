@@ -116,15 +116,25 @@ def run_app(play = False):
     
     
     if choice != '6':
-      selection = MULTI_SELECTION[choice]
+      try:
+        selection = MULTI_SELECTION[choice]
+      except KeyError:
+        selection_choice = '3'
+        print('Lets go back')
+        
+        
       selection_choice = multi_selection(selection)
+      
       if selection_choice == '3':
         continue
-      else:
+      elif selection_choice in ['1', '2', '5']:
         ### Aquí debe incluirse todo el tema de .show que
         ### sería el mismo método para todos, sea artist, podcast y album
         ### Peeeero si es playlist, sea cual sea aún no hemos mostrado el show :v
         selection[selection_choice].show()
+      
+      else:
+        pass
       
     else:
       loop_ = False

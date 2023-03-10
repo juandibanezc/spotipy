@@ -1,9 +1,10 @@
-from spotipy import Spotipy
+from .spotipy import Spotipy
 
 class Playlist(Spotipy):
 
-    def __init__(self, name, duration_ms, image, public, 
-                 collaborative, collaborators, creator, likes, total_songs, songs, description):
+    def __init__(self, name:str = '', duration_ms:int = 0, image:str = 'jpeg', public: bool = False, 
+                 collaborative: bool = False, collaborators:int = 0, creator: str = None, likes: int = None, 
+                  songs = None, description:str = ''):
         super().__init__(name, duration_ms, image)
 
         self.public = public
@@ -11,9 +12,12 @@ class Playlist(Spotipy):
         self.collaborators = collaborators
         self.creator = creator
         self.likes = likes
-        self.total_songs = total_songs
         self.songs = songs
+        self.total_songs = len(songs)
         self.description = description
+        
+    def __repr__(self) -> str:
+        return 'Playlisr'
 
     def leave(self):
         pass

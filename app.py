@@ -3,7 +3,8 @@ from models.episode import Episode
 from models.album import Album
 from models.podcast import Podcast
 from models.artist import Artist
-from random import shuffle
+from models.playlist import Playlist
+import random
 from interactive_functions import *
 import json
 
@@ -63,6 +64,12 @@ def run_app(play = False):
   second_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_album['songs']]
   second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list, author=morat_album['author'], release_date=morat_album['release_date'], album_type=morat_album['album_type'], file_path=morat_album["images"][-1]["url"])
   
+  all_songs = first_list+second_list
+  
+  random.shuffle(all_songs)
+  
+  liked_list_prove = [random.choice(all_songs), random.choice(all_songs)]
+  
   albums_selections = {
      '1':first_album,
      '2':second_album
@@ -80,6 +87,7 @@ def run_app(play = False):
      '2':second_artist
   }
   
+  
   # Podcasts and episodes
   first_list = [Episode(i['name'], i['duration_ms'], i['description'], i['image_file_path'], i['audio_file_path']) for i in podcast_1['episodes']]
   first_podcast = Podcast(podcast_1['description'], podcast_1['name'], podcast_1['duration_ms'], podcast_1['image_file_path'], first_list, podcast_1['publisher'])
@@ -93,9 +101,12 @@ def run_app(play = False):
      '2':second_podcast
   }
   
+  liked_songs = Playlist(name = 'Liked Songs', songs = liked_list_prove)
+  
   MULTI_SELECTION = {
     '1':artist_selections,
     '2':albums_selections,
+    '3':liked_songs,
     '5':podcast_selections
   }
   
@@ -112,6 +123,7 @@ def run_app(play = False):
       else:
         ### Aquí debe incluirse todo el tema de .show que
         ### sería el mismo método para todos, sea artist, podcast y album
+        ### Peeeero si es playlist, sea cual sea aún no hemos mostrado el show :v
         selection[selection_choice].show()
       
     else:

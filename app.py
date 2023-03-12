@@ -65,11 +65,8 @@ def run_app(play = False):
   second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list, author=morat_album['author'], release_date=morat_album['release_date'], album_type=morat_album['album_type'], file_path=morat_album["images"][-1]["url"])
   
   all_songs = first_list+second_list
-  
   random.shuffle(all_songs)
-  
-  liked_list_prove = [random.choice(all_songs), random.choice(all_songs)]
-  
+
   albums_selections = {
      '1':first_album,
      '2':second_album
@@ -100,13 +97,23 @@ def run_app(play = False):
      '1':first_podcast,
      '2':second_podcast
   }
-  
-  liked_songs = Playlist(name = 'Liked Songs', songs = liked_list_prove)
+
+
+  # Playlists
+  liked_songs = Playlist(name = 'Liked Songs', songs = random.choices(all_songs, k=2))
+  first_playlist = Playlist(name = 'Party all night', songs = random.choices(all_songs, k=10),creator= "Juan", likes=1, description="Perfect playlist to dance all night and party like there's no tomorrow.")
+  second_playlist = Playlist(name = 'Study time', songs = random.choices(all_songs, k=10), creator= "Fernando", likes=1, description="Songs that will help to concentrate and study more smoothly.")
+
+  playlist_selections = {
+     '1':first_playlist,
+     '2':second_playlist
+  }
   
   MULTI_SELECTION = {
     '1':artist_selections,
     '2':albums_selections,
     '3':liked_songs,
+    '4':playlist_selections,
     '5':podcast_selections
   }
   

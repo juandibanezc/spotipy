@@ -11,3 +11,6 @@ class InvalidAudioFile(Exception):
 
 class InvalidImageFile(Exception):
 	pass
+
+class InvalidSelectionError(Exception):
+	pass

@@ -12,6 +12,12 @@ class Episode(Spotipy, Multimedia):
 
     # Defined self methods of the class Episode
 
+    def show(self):
+        print('*** Episode ***\n')
+        print('\n* Name:', self.name)
+        print('\n* Duration:', self._Spotipy__duration_ms)
+        print('\n* Description:', self.description)
+
     def next_episode(self):
         pass
 
@@ -27,7 +33,7 @@ class Episode(Spotipy, Multimedia):
         return super().download()
     
     def play(self):
-        return super().play()
+        return self.audio.play()
     
     def like(self):
         return super().like()

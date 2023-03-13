@@ -14,6 +14,14 @@ class Song(Spotipy, Multimedia):
         self.reproductions = reproductions
         self.artist = artist
 
+    def show(self):
+        print('*** Song ***\n')
+        print('\n* Name:', self.name)
+        print('\n* Duration:', self._Spotipy__duration_ms)
+        print('\n* Artists:')
+        for i, artist in enumerate(self.artist):
+            print(f'** {i+1}. {artist}')
+
     def shuffle(self):
         pass
 

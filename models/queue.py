@@ -1,15 +1,15 @@
 from .song import Song
 from .episode import Episode
-from typing import Union
+from typing import Union, List
 
 class Queue:
 
-    def __init__(self, songs: Union[Song,Episode]):
-        self.songs = songs
+    def __init__(self, audio_objects: List[Union[Song,Episode]]):
+        self.audio_objects = audio_objects
 
     def play(self):
-        pass
-    
+        return self.audio_objects[0].play()
+
     def back(self):
         pass
     

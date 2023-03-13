@@ -27,7 +27,7 @@ class Album(Spotipy):
     def show(self):
         print('*** Album ***\n')
         print('\n* Name:', self.name)
-        print('\n* Total duration:', self.duration_ms)
+        print('\n* Total duration:', self._Spotipy__duration_ms)
         print('\n* Author:', self.author)
         print('\n* Release date:', self.release_date)
         print('\n* Total songs:', self.total_songs)

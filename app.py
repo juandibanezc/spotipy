@@ -4,8 +4,11 @@ from models.album import Album
 from models.podcast import Podcast
 from models.artist import Artist
 from models.playlist import Playlist
+from models.user import User
+from models.queue import Queue
 import random
 from interactive_functions import *
+from models.exceptions import InvalidSelectionError
 import json
 
 f_1 = open('inputs/album_1.json')
@@ -48,11 +51,16 @@ def run_app(play = False):
 ⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠿⠿⠿⠿⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀
   
   """)
-  print('')
-  print('Welcome to Spotify')
+  print('\nWelcome to Spotify')
 
    
   #instantiating all objects:
+
+  # User
+  print("\nSign in to your user account\n")
+  email = input("Email: ")
+  password = input("Password: ")
+  user_1 = User(email=email, password=password)
 
   # Albums and songs
   top_songs_1 = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in bb_artist['top_songs']]
@@ -117,8 +125,7 @@ def run_app(play = False):
     '5':podcast_selections
   }
   
-  loop_ = True
-  while loop_:
+  while True:
     choice = library()
     
     
@@ -126,36 +133,42 @@ def run_app(play = False):
       try:
         selection = MULTI_SELECTION[choice]
       except KeyError:
-        selection_choice = '3'
-        print('Lets go back')
-        
+        raise InvalidSelectionError("Invalid selection. Available options are: 1,2,3,4,5")
         
       selection_choice = multi_selection(selection)
-      
-      if selection_choice == '3':
+      selection[selection_choice].show()
+
+      try:
+        selection_choice = input("\nSelect a song or episode to play\n")
+
+        if choice == "5":
+          user_1.queue = Queue(selection[selection_choice].episodes)
+        else:
+          user_1.queue = Queue(selection[selection_choice].songs)
+        while True:
+          try:
+            user_1.queue.play()
+            next_command = input("Next command?") # improve in interactive functions?
+            user_1.queue.next()
+          except KeyboardInterrupt:
+            break
+
+      except KeyboardInterrupt:
         continue
-      elif selection_choice in ['1', '2', '5']:
-        ### Aquí debe incluirse todo el tema de .show que
-        ### sería el mismo método para todos, sea artist, podcast y album
-        ### Peeeero si es playlist, sea cual sea aún no hemos mostrado el show :v
-        selection[selection_choice].show()
-      
-      else:
-        pass
-      
+
     else:
-      loop_ = False
+      break
     
 
   if play:
     songDict = {
-        "name": "Flowers",
+        "name": "Forever Young",
         "audio_file_path": "files/audios/Forever_Young_Otis_McDonald.mp3",
         "duration_ms": "242",
         "image_file_path": "files/images/otis_mcdonald.jpeg",
     }
 
-    song1 = Song(name="Flowers", audio_file_path="files/audios/Forever_Young_Otis_McDonald.mp3",
+    song1 = Song(name="Forever Young", audio_file_path="files/audios/Forever_Young_Otis_McDonald.mp3",
                 duration_ms=123, image_file_path="files/images/otis_mcdonald.jpeg"
                 )
 

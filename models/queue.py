@@ -4,17 +4,24 @@ from typing import Union, List
 
 class Queue:
 
+    
     def __init__(self, audio_objects: List[Union[Song,Episode]]):
         self.audio_objects = audio_objects
+        self.i = 0
 
     def play(self):
         return self.audio_objects[0].play()
 
     def back(self):
-        pass
+        '''
+        Se supone debe devolverse
+        '''
+        self.i -= 1
+        return self.audio_objects[self.i].play()
     
     def next(self):
-        pass
+        self.i += 1
+        return self.audio_objects[self.i].play()
     
     def add(self):
         pass
@@ -24,10 +31,6 @@ class Queue:
 
     def change_order(self):
         pass
-
-# Método Play, Next, Back, Shuffle, eliminarlo del resto de clases
-# limpieza a las otras clases
-# refactorizar spotipy
-# Interacción con el usuario
-# Polimorfismo: Show
-# Download images Asciii
+    
+    def shuffle(self):
+        pass

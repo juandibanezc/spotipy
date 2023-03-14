@@ -1,4 +1,5 @@
 from .spotipy import Spotipy
+from .queue import Queue
 
 class Playlist(Spotipy):
 
@@ -12,7 +13,7 @@ class Playlist(Spotipy):
         self.collaborators = collaborators
         self.creator = creator
         self.likes = likes
-        self.songs = songs
+        self.songs = Queue(songs)
         self.total_songs = len(songs)
         self.description = description
         
@@ -51,7 +52,7 @@ class Playlist(Spotipy):
     # Methods from Spotipy class
 
     def play(self):
-        return super().play()
+        return self.songs.play()
     
     def like(self):
         return super().like()

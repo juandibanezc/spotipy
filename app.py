@@ -132,10 +132,14 @@ def run_app(play = False):
     if choice != '6':
       try:
         selection = MULTI_SELECTION[choice]
+        
       except KeyError:
-        raise InvalidSelectionError("Invalid selection. Available options are: 1,2,3,4,5")
+        
+        raise InvalidSelectionError("Invalid selection. Available options are: 1,2,3,4,5,6")
+      
         
       selection_choice = multi_selection(selection)
+      
       selection[selection_choice].show()
 
       try:
@@ -143,13 +147,19 @@ def run_app(play = False):
 
         if choice == "5":
           user_1.queue = Queue(selection[selection_choice].episodes)
+          
         else:
           user_1.queue = Queue(selection[selection_choice].songs)
+          
         while True:
+          
           try:
             user_1.queue.play()
+            
             next_command = input("Next command?") # improve in interactive functions?
+            
             user_1.queue.next()
+            
           except KeyboardInterrupt:
             break
 

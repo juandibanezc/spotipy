@@ -6,15 +6,6 @@ class Multimedia:
         self.playing = playing
         self.audio = MP3File(file_path)
 
-    def next(self):
-        pass
-
-    def back(self):
-        pass
-    
-    def shuffle(self):
-        pass
-
     def add_to_playlist(self):
         pass
 

@@ -43,7 +43,18 @@ def multi_selection(multi_selec:dict) -> str:
       except TypeError:
         
         class_object = multi_selec
-        
+
+        if multi_selec.songs == None:
+          print(f'''
+
+            You do not have any songs in {class_object.name}.
+            
+            Like a song to add to your Liked Songs
+            
+            3. Back to the Library menu
+
+            ''')
+      
         print(f'''
 
           You have selected the {class_object} Liked Songs:

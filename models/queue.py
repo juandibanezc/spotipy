@@ -24,3 +24,10 @@ class Queue:
 
     def change_order(self):
         pass
+
+# Método Play, Next, Back, Shuffle, eliminarlo del resto de clases
+# limpieza a las otras clases
+# refactorizar spotipy
+# Interacción con el usuario
+# Polimorfismo: Show
+# Download images Asciii

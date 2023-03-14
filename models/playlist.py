@@ -4,7 +4,7 @@ class Playlist(Spotipy):
 
     def __init__(self, name:str = '', image_file_path:str = 'jpeg', public: bool = False, 
                  collaborative: bool = False, collaborators:int = 0, creator: str = None, likes: int = None, 
-                  songs = None, description:str = ''):
+                  songs:list = None, description:str = ''):
         super().__init__(name, sum([song._Spotipy__duration_ms for song in songs]), image_file_path)
 
         self.public = public

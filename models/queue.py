@@ -12,10 +12,19 @@ class Queue:
 
     def play(self, song_selected = None) -> tuple:
         if song_selected == None:
-            return self.audio_objects[self.i].name, self.audio_objects[self.i].play()
+            try:
+                return self.audio_objects[self.i].name, self.audio_objects[self.i].play()
+            except IndexError:
+                self.i = 0
+                return self.audio_objects[self.i].name, self.audio_objects[self.i].play()
         else:
             self.i = song_selected
-            return self.audio_objects[song_selected].name, self.audio_objects[song_selected].play()
+            try:
+                return self.audio_objects[song_selected].name, self.audio_objects[song_selected].play()
+            except IndexError:
+                self.i = 0
+                song_selected = 0
+                return self.audio_objects[song_selected].name, self.audio_objects[song_selected].play()
 
     def back(self):
         self.i -= 1
@@ -32,6 +41,11 @@ class Queue:
 
     def change_order(self):
         pass
+    
+    def show(self):
+        print('\n* Songs or Episodes in Queue:')
+        for j, song in enumerate(self.audio_objects[self.i:]):
+            print(f'** {j+1}. {song.name}')
     
     def shuffle(self):
         random.shuffle(self.audio_objects)

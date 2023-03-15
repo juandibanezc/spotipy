@@ -12,8 +12,8 @@ Métodos:
 [X] Next -> Queue
 [X] Back -> Queue
 [X] Shuffle -> Queue
-[] Give Likes -> User
-[] Add -> Playtlist, Queue
+[X] Give Likes -> User
+[X] Add -> Playtlist, Queue
 [] share
 [] download
 
@@ -21,16 +21,16 @@ Métodos:
 Clases/códigos completamente listas:
 [X] Album
 [X] Artist
-[] Episode
+[X] Episode
 [] exceptions
-[] files
+[X] files
 [] Multimedia
 [] Playlist
 [] Podcast
 [] Queue
 [] Song
-[] Spotipy
-[] User
+[X] Spotipy
+[X] User
 [] app
 [] interactive_functions
 

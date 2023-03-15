@@ -5,16 +5,22 @@ class Playlist(Spotipy):
 
     def __init__(self, name:str = '', image_file_path:str = 'jpeg', public: bool = False, 
                  collaborative: bool = False, collaborators:int = 0, creator: str = None, likes: int = None, 
-                  songs:list = None, description:str = ''):
-        super().__init__(name, sum([song._Spotipy__duration_ms for song in songs]), image_file_path)
+                 audio_objects:list = [], description:str = ''):
+        
+        if audio_objects == None:
+            duration_ms = 0
+        else: 
+            duration_ms = sum([song._Spotipy__duration_ms for song in audio_objects])
+        
+        super().__init__(name = name, duration_ms = duration_ms, file_path = image_file_path)
 
         self.public = public
         self.collaborative = collaborative
         self.collaborators = collaborators
         self.creator = creator
         self.likes = likes
-        self.songs = Queue(songs)
-        self.total_songs = len(songs)
+        self.audio_object = Queue(audio_objects)
+        self.total_songs = len(audio_objects)
         self.description = description
         
     def __repr__(self) -> str:
@@ -31,27 +37,30 @@ class Playlist(Spotipy):
         print('\n* Likes:', self.likes)
         print('\n* Total songs:', self.total_songs)
         print('\n* Songs:')
-        for i, song in enumerate(self.songs):
+        for i, song in enumerate(self.audio_object.audio_objects):
             print(f'** {i+1}. {song.name}')
 
     def leave(self):
         pass
 
-    def add_song(self, added_song):
-        self.songs.append(added_song)
+    def add_multimedia(self, added_object):
+        self.audio_object.audio_objects.append(added_object)
+        self.total_songs = len(self.audio_object.audio_objects)
+        self._Spotipy__duration_ms = sum([song._Spotipy__duration_ms for song in self.audio_object.audio_objects])
+        
 
-    def remove_song(self, removed_song):
-        if self.name == 'Liked Songs':
-            if removed_song.like:
+    def remove_song(self, removed_object):
+        if self.name == 'Liked Songs' or self.name == 'Your Episodes':
+            if removed_object.liked:
                 pass
             else:
-                print(f'You removed {self.songs[removed_song].name} from your liked songs')
-                self.songs.pop(removed_song)
+                print(f'You removed {self.audio_object.audio_objects[removed_object].name} from your liked songs')
+                self.audio_object.audio_objects.pop(removed_object)
         else:
-            print(f'You sure that you want to remove {self.songs[removed_song].name} from your playlist?')
+            print(f'You sure that you want to remove {self.audio_object.audio_objects[removed_object].name} from your playlist?')
             choice = int(input("(1.Y / 2.N)>"))
             if choice == 1:
-                self.songs.pop(removed_song)
+                self.audio_object.audio_objects.pop(removed_object)
             else:
                 pass
 
@@ -60,11 +69,12 @@ class Playlist(Spotipy):
 
     def remove_collaborators(self):
         pass
+ 
 
+    def play(self, object_selected = None):
+        return self.audio_object.play(song_selected = object_selected)
+    
     # Methods from Spotipy class
-
-    def play(self, song_selected = None):
-        return self.songs.play(song_selected = song_selected)
     
     def like(self):
         return super().like()

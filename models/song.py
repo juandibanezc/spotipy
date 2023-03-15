@@ -13,6 +13,12 @@ class Song(Spotipy, Multimedia):
         Multimedia.__init__(self, liked=liked, playing=playing, file_path=audio_file_path)
         self.reproductions = reproductions
         self.artist = artist
+        
+    def __repr__(self) -> str:
+        return 'Song'
+    
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}'
 
     def show(self):
         print('*** Song ***\n')

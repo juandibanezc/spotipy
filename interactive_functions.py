@@ -12,8 +12,9 @@ def library() -> str:
         2. Album
         3. Liked Songs  
         4. Playlists   
-        5. Your Episodes (Podcast)
-        6. Exit
+        5. Your Episodes
+        6. Your Podcasts
+        7. Exit
   
   Select One Option
   ''')
@@ -67,7 +68,7 @@ def multi_selection(multi_selec:dict) -> str:
       
       return input('>')
 
-def play_action(playing:bool, name):
+def play_action(playing:bool, name) -> str:
    if playing:
     print(f"""
                        {name}
@@ -88,8 +89,17 @@ def play_action(playing:bool, name):
 
     return input(">")
    
-def other_options():
-  pass
+def other_options() -> str:
+  
+  print("""
+        
+        1. See your Queue (show)
+        2. Remove a song from your Queue (drop)
+        3. Change order (show and change_order)
+        4. Back to library
+        """)
+  
+  return input(">")
 
 def user_interaction(options:str):
   pass

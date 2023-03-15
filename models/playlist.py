@@ -4,7 +4,7 @@ from .queue import Queue
 class Playlist(Spotipy):
 
     def __init__(self, name:str = '', image_file_path:str = 'jpeg', public: bool = False, 
-                 collaborative: bool = False, collaborators:int = 0, creator: str = None, likes: int = None, 
+                 collaborative: bool = False, collaborators: list = [], creator: str = None, likes: int = None, 
                  audio_objects:list = [], description:str = ''):
         
         if audio_objects == None:

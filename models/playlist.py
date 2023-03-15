@@ -37,11 +37,23 @@ class Playlist(Spotipy):
     def leave(self):
         pass
 
-    def add_song(self):
-        pass
+    def add_song(self, added_song):
+        self.songs.append(added_song)
 
-    def remove_song(self):
-        pass
+    def remove_song(self, removed_song):
+        if self.name == 'Liked Songs':
+            if removed_song.like:
+                pass
+            else:
+                print(f'You removed {self.songs[removed_song].name} from your liked songs')
+                self.songs.pop(removed_song)
+        else:
+            print(f'You sure that you want to remove {self.songs[removed_song].name} from your playlist?')
+            choice = int(input("(1.Y / 2.N)>"))
+            if choice == 1:
+                self.songs.pop(removed_song)
+            else:
+                pass
 
     def add_collaborators(self):
         pass
@@ -51,8 +63,8 @@ class Playlist(Spotipy):
 
     # Methods from Spotipy class
 
-    def play(self):
-        return self.songs.play()
+    def play(self, song_selected = None):
+        return self.songs.play(song_selected = song_selected)
     
     def like(self):
         return super().like()

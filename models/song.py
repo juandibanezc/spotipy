@@ -36,8 +36,12 @@ class Song(Spotipy, Multimedia):
         
         if self.playing:
             print(f"You are playing: {self.name}")
+
+            return self.playing
         else:
             print(f"You are in Pause")
+
+            return self.playing
         
     # from Spotipy class
 

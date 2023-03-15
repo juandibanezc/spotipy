@@ -18,8 +18,6 @@ class Episode(Spotipy, Multimedia):
         print('\n* Duration:', self._Spotipy__duration_ms)
         print('\n* Description:', self.description)
 
-    def next_episode(self):
-        pass
 
     def add_to_users_episodes(self):
         pass
@@ -33,7 +31,12 @@ class Episode(Spotipy, Multimedia):
         return super().download()
     
     def play(self):
-        return self.audio.play()
+        self.playing = not self.playing
+        
+        if self.playing:
+            print(f"You are playing: {self.name}")
+        else:
+            print(f"You are in Pause")
     
     def like(self):
         return super().like()

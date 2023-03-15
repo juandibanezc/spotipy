@@ -8,15 +8,19 @@ Pongo una X dónde ya esté listo
 # Download images Asciii
 
 Métodos:
-[] Play -> Song, Artist, Playlist, Queue
-[] Next -> Queue
-[] Back -> Queue
-[] Shuffle -> Queue
+[X] Play -> Song, Artist, Playlist, Queue, Album
+[X] Next -> Queue
+[X] Back -> Queue
+[X] Shuffle -> Queue
+[] Give Likes -> User
+[] Add -> Playtlist, Queue
+[] share
+[] download
 
 
-Clases completamente listas:
-[] Album
-[] Artist
+Clases/códigos completamente listas:
+[X] Album
+[X] Artist
 [] Episode
 [] exceptions
 [] files
@@ -31,4 +35,4 @@ Clases completamente listas:
 [] interactive_functions
 
 Refactorización de código
-[] -> Eliminar métodos de las clases (Limpieza)
+[X] -> Eliminar métodos de las clases (Limpieza) - Parcialmente

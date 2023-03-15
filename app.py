@@ -67,10 +67,14 @@ def run_app(play = False):
   top_songs_2 = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_artist['top_songs']]
   
   first_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in bb_album['songs']]
-  first_album = Album(name = bb_album['name'], duration_ms=bb_album['duration_ms'], songs=first_list, author=bb_album['author'], release_date=bb_album['release_date'], album_type=bb_album['album_type'], file_path=bb_album["images"][-1]["url"])
+  first_album = Album(name = bb_album['name'], duration_ms=bb_album['duration_ms'], songs=first_list, 
+                      author=bb_album['author'], release_date=bb_album['release_date'], album_type=bb_album['album_type'], 
+                      file_path=bb_album["images"][-1]["url"])
 
   second_list = [Song(i['name'], i['duration_ms'], artist=i['artist']) for i in morat_album['songs']]
-  second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list, author=morat_album['author'], release_date=morat_album['release_date'], album_type=morat_album['album_type'], file_path=morat_album["images"][-1]["url"])
+  second_album = Album(name = morat_album['name'], duration_ms=morat_album['duration_ms'], songs=second_list, 
+                       author=morat_album['author'], release_date=morat_album['release_date'], 
+                       album_type=morat_album['album_type'], file_path=morat_album["images"][-1]["url"])
   
   all_songs = first_list+second_list
   random.shuffle(all_songs)
@@ -82,10 +86,10 @@ def run_app(play = False):
   
   # Artists
   first_artist = Artist(name = bb_artist['name'], popularity=bb_artist['popularity'], 
-                        followers=bb_artist['followers'], albums=[first_album], top_songs=top_songs_1)
+                        followers=bb_artist['followers'], albums=[first_album], songs=top_songs_1)
   
   second_artist = Artist(name = morat_artist['name'], popularity=morat_artist['popularity'], 
-                        followers=morat_artist['followers'], albums=[second_album], top_songs=top_songs_2)
+                        followers=morat_artist['followers'], albums=[second_album], songs=top_songs_2)
   
   artist_selections = {
      '1':first_artist,
@@ -143,22 +147,43 @@ def run_app(play = False):
       selection[selection_choice].show()
 
       try:
-        selection_choice = input("\nSelect a song or episode to play\n")
+        selected_song = int(input("\nSelect a song or episode to play\n"))
+        selected_song -= 1
+
+        
 
         if choice == "5":
           user_1.queue = Queue(selection[selection_choice].episodes)
-          
         else:
           user_1.queue = Queue(selection[selection_choice].songs)
-          
+        
+        play_name, play_action_bool = user_1.queue.play(selected_song)
+
         while True:
           
           try:
-            user_1.queue.play()
             
-            next_command = input("Next command?") # improve in interactive functions?
             
-            user_1.queue.next()
+            next_command = play_action(playing = play_action_bool, 
+                                            name = play_name)
+            
+            if next_command  == '0':
+              user_1.queue.shuffle()
+
+            elif next_command == '1':
+              user_1.queue.back()
+              play_name, play_action_bool = user_1.queue.play()
+
+            elif next_command == '2':
+              play_name, play_action_bool = user_1.queue.play()
+
+            elif next_command == '3':
+              user_1.queue.next()
+              play_name, play_action_bool = user_1.queue.play()
+
+            #next_command = input("Next command?") # improve in interactive functions?
+            
+            #user_1.queue.next()
             
           except KeyboardInterrupt:
             break

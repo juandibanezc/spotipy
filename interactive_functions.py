@@ -66,3 +66,30 @@ def multi_selection(multi_selec:dict) -> str:
           ''')
       
       return input('>')
+
+def play_action(playing:bool, name):
+   if playing:
+    print(f"""
+                       {name}
+            -------------------------------- ♡ 
+            🔀 ⏮            ⏸            ⏭  🔁""")
+    
+    print("0. Shuffle 1. Back  2. Pause  3. Next  4.Like 5. See Other Options")
+
+    return input(">")
+
+   else:
+    print(f"""
+                       {name}
+            -------------------------------- ♡ 
+            🔀 ⏮            ▶            ⏭  🔁""")
+    
+    print("0. Shuffle 1. Back  2. Play 3. Next  4.Like  5. See Other Options")
+
+    return input(">")
+   
+def other_options():
+  pass
+
+def user_interaction(options:str):
+  pass

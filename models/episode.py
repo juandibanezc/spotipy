@@ -11,18 +11,18 @@ class Episode(Spotipy, Multimedia):
         self.description = description
 
     # Defined self methods of the class Episode
+    
+    def __repr__(self) -> str:
+        return 'Episode'
+    
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}'
 
     def show(self):
         print('*** Episode ***\n')
         print('\n* Name:', self.name)
         print('\n* Duration:', self._Spotipy__duration_ms)
         print('\n* Description:', self.description)
-
-    def next_episode(self):
-        pass
-
-    def add_to_users_episodes(self):
-        pass
 
     # Defined first heritance methods Spotipy
 
@@ -33,18 +33,21 @@ class Episode(Spotipy, Multimedia):
         return super().download()
     
     def play(self):
-        return self.audio.play()
+        self.playing = not self.playing
+        
+        if self.playing:
+            print(f"You are playing: {self.name}")
+
+            return self.playing
+        else:
+            print(f"You are in Pause")
+
+            return self.playing
     
     def like(self):
         return super().like()
     
     # Defined second heritance methods Multimedia
-
-    def next(self):
-        return super().next()
-    
-    def back(self):
-        return super().back()
     
     def add_to_playlist(self):
         return super().add_to_playlist()

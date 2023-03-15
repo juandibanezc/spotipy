@@ -13,6 +13,12 @@ class Song(Spotipy, Multimedia):
         Multimedia.__init__(self, liked=liked, playing=playing, file_path=audio_file_path)
         self.reproductions = reproductions
         self.artist = artist
+        
+    def __repr__(self) -> str:
+        return 'Song'
+    
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}'
 
     def show(self):
         print('*** Song ***\n')
@@ -22,9 +28,6 @@ class Song(Spotipy, Multimedia):
         for i, artist in enumerate(self.artist):
             print(f'** {i+1}. {artist}')
 
-    def shuffle(self):
-        pass
-
     def repeat(self):
         pass
 
@@ -33,7 +36,19 @@ class Song(Spotipy, Multimedia):
 
     def go_to_radio(self):
         pass
+    
+    def play(self):
+        self.playing = not self.playing
+        
+        if self.playing:
+            print(f"You are playing: {self.name}")
 
+            return self.playing
+        else:
+            print(f"You are in Pause")
+
+            return self.playing
+        
     # from Spotipy class
 
     def share(self):
@@ -42,19 +57,7 @@ class Song(Spotipy, Multimedia):
     def download(self):
         return super().download()
     
-    def play(self):
-        return self.audio.play()
-    
-    def like(self):
-        return super().like()
-    
     # From multimedia class
-
-    def next(self):
-        return super().next()
-    
-    def back(self):
-        return super().back()
     
     def add_to_playlist(self):
         return super().add_to_playlist()

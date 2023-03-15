@@ -1,4 +1,4 @@
-from queue import Queue
+from .queue import Queue
 
 class User:
 
@@ -12,5 +12,17 @@ class User:
         self.queue = queue
 
     def give_likes(self, song_or_episode):
-        song_or_episode.liked == True
-        return True
+        song_or_episode.liked = not song_or_episode.liked
+        
+        if str(song_or_episode) == 'Song':
+            if song_or_episode.liked:
+                print(f"Now {song_or_episode.name} is in your liked songs!")
+            
+            else:
+                print(f"Now {song_or_episode.name} is not in your liked songs!")
+        else:
+            if song_or_episode.liked:
+                print(f"Now {song_or_episode.name} is in Your Episodes!")
+            
+            else:
+                print(f"Now {song_or_episode.name} is not in Your Episodes!") 

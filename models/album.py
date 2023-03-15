@@ -18,11 +18,11 @@ class Album(Spotipy):
     def __repr__(self) -> str:
         return 'Album'
 
-    def play(self):
+    def play(self, selected_song = None):
         
         album_queue = Queue(self.songs)
 
-        return album_queue.play()
+        return album_queue.play(selected_song = selected_song)
     
     def show(self):
         print('*** Album ***\n')

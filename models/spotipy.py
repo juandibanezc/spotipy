@@ -12,9 +12,6 @@ class Spotipy:
     def download(self):
         pass
 
-    def play(self, song):
-        song.audio.play()
-
     def like(self) -> None:
         
         self.liked = not self.liked

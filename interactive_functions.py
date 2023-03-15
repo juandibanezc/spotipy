@@ -12,8 +12,9 @@ def library() -> str:
         2. Album
         3. Liked Songs  
         4. Playlists   
-        5. Your Episodes (Podcast)
-        6. Exit
+        5. Your Episodes
+        6. Your Podcasts
+        7. Exit
   
   Select One Option
   ''')
@@ -43,7 +44,18 @@ def multi_selection(multi_selec:dict) -> str:
       except TypeError:
         
         class_object = multi_selec
-        
+
+        if multi_selec.songs == None:
+          print(f'''
+
+            You do not have any songs in {class_object.name}.
+            
+            Like a song to add to your Liked Songs
+            
+            3. Back to the Library menu
+
+            ''')
+      
         print(f'''
 
           You have selected the {class_object} Liked Songs:
@@ -55,3 +67,39 @@ def multi_selection(multi_selec:dict) -> str:
           ''')
       
       return input('>')
+
+def play_action(playing:bool, name) -> str:
+   if playing:
+    print(f"""
+                       {name}
+            -------------------------------- ♡ 
+            🔀 ⏮            ⏸            ⏭  🔁""")
+    
+    print("0. Shuffle 1. Back  2. Pause  3. Next  4.Like 5. See Other Options")
+
+    return input(">")
+
+   else:
+    print(f"""
+                       {name}
+            -------------------------------- ♡ 
+            🔀 ⏮            ▶            ⏭  🔁""")
+    
+    print("0. Shuffle 1. Back  2. Play 3. Next  4.Like  5. See Other Options")
+
+    return input(">")
+   
+def other_options() -> str:
+  
+  print("""
+        
+        1. See your Queue (show)
+        2. Remove a song from your Queue (drop)
+        3. Change order (show and change_order)
+        4. Back to library
+        """)
+  
+  return input(">")
+
+def user_interaction(options:str):
+  pass

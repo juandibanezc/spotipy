@@ -1,0 +1,38 @@
+Pongo una X dónde ya esté listo
+
+# Método Play, Next, Back, Shuffle, eliminarlo del resto de clases
+# limpieza a las otras clases
+# refactorizar spotipy
+# Interacción con el usuario
+# Polimorfismo: Show
+# Download images Asciii
+
+Métodos:
+[X] Play -> Song, Artist, Playlist, Queue, Album
+[X] Next -> Queue
+[X] Back -> Queue
+[X] Shuffle -> Queue
+[X] Give Likes -> User
+[X] Add -> Playtlist, Queue
+[] share
+[] download
+
+
+Clases/códigos completamente listas:
+[X] Album
+[X] Artist
+[X] Episode
+[] exceptions
+[X] files
+[] Multimedia
+[] Playlist
+[] Podcast
+[] Queue
+[] Song
+[X] Spotipy
+[X] User
+[] app
+[] interactive_functions
+
+Refactorización de código
+[X] -> Eliminar métodos de las clases (Limpieza) - Parcialmente

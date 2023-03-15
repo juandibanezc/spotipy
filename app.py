@@ -45,9 +45,9 @@ def run_app():
             except KeyError:
                 raise InvalidSelectionError("Invalid selection. Available options are: 1,2,3,4,5,6")
             
-            if choice in ['3', '5']:
+            if choice in ['3', '4', '5']:
                 if len(selection.audio_object.audio_objects) == 0:
-                    print(f'You dont have any {selection} here, please add one')
+                    print(f'You dont have any {selection.audio_object.audio_objects} here, please add one')
                     continue
                 else:
                     selection.show()
@@ -64,7 +64,7 @@ def run_app():
                     user_1.queue = Queue(selection[selection_choice].episodes)
                 
                 elif choice in ['3', '4', '5']:
-                    user_1.queue = selection[selection_choice].audio_object
+                    user_1.queue = selection.audio_object
                 else:
                     user_1.queue = Queue(selection[selection_choice].songs)
                     
@@ -99,6 +99,7 @@ def run_app():
                             trick = other_options()
                             
                             if trick == '4':
+                                play_action_bool = False
                                 break
                             else:
                                 if trick == '1':

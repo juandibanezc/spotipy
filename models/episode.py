@@ -20,9 +20,9 @@ class Episode(Spotipy, Multimedia):
         return f'{self.__class__.__name__}'
 
     def show(self):
-        print('*** Episode ***\n')
+        print('*** Episode ***')
         print('\n* Name:', self.name)
-        print('\n* Duration:', self._Spotipy__duration_ms)
+        print(f'\n* Duration: {self._Spotipy__duration_ms} ms')
         print('\n* Description:', self.description)
     
     def skip_forward():

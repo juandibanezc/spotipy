@@ -1,6 +1,3 @@
-from .queue import Queue
-
-
 class Artist:
 
     def __init__(self, name:str, popularity:int, followers:int, albums: list, songs: list):
@@ -15,7 +12,7 @@ class Artist:
         return 'Artist'
     
     def show(self):
-        print('*** Artist ***\n')
+        print('*** Artist ***')
         print('\n* Name:', self.name)
         print('\n* Popularity:', self.popularity)
         print('\n* Followers:', self.followers)
@@ -26,12 +23,6 @@ class Artist:
         for i, song in enumerate(self.songs):
             print(f'** {i+1}. {song.name}')
             
-    def play(self, selected_song = None):
-        
-        top_songs_queue = Queue(self.songs)
-
-        return top_songs_queue.play(selected_song = selected_song)
-
     def share(self):
         pass
 

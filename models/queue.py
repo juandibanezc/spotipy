@@ -8,7 +8,9 @@ class Queue:
     
     def __init__(self, audio_objects: List[Union[Song,Episode]]):
         self.audio_objects = audio_objects
+        self.original_queue = self.audio_objects.copy()
         self.i = 0
+        self.shuffled = False
 
     def play(self, song_selected = None) -> tuple:
         if song_selected == None:
@@ -54,5 +56,11 @@ class Queue:
             print(f'** {j+1}. {song.name}')
     
     def shuffle(self):
-        random.shuffle(self.audio_objects)
-        print("You shuffle your Queue")
+        if self.shuffled == False:
+          random.shuffle(self.audio_objects)
+          self.shuffled = True
+          print("You shuffled your Queue")
+        else:
+          self.audio_objects = self.original_queue.copy()
+          self.shuffled = False
+          print("Your Queue is back to the original order")

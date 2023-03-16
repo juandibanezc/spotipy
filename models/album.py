@@ -25,9 +25,9 @@ class Album(Spotipy):
         return album_queue.play(selected_song = selected_song)
     
     def show(self):
-        print('*** Album ***\n')
+        print('*** Album ***')
         print('\n* Name:', self.name)
-        print('\n* Total duration:', self._Spotipy__duration_ms)
+        print(f'\n* Total duration: {self._Spotipy__duration_ms} ms')
         print('\n* Author:', self.author)
         print('\n* Release date:', self.release_date)
         print('\n* Total songs:', self.total_songs)

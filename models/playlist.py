@@ -30,10 +30,10 @@ class Playlist(Spotipy):
         return f'{self.__class__.__name__}'
 
     def show(self):
-        print('*** Playlist ***\n')
+        print('*** Playlist ***')
         print('\n* Name:', self.name)
         print('\n* Description:', self.description)
-        print('\n* Total duration:', self._Spotipy__duration_ms)
+        print(f'\n* Total duration: {self._Spotipy__duration_ms} ms')
         print('\n* Creator:', self.creator)
         print('\n* Public:', self.public)
         print('\n* Collaborative:', self.collaborative)

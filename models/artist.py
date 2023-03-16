@@ -1,4 +1,4 @@
-from typing import List
+from .queue import Queue
 
 
 class Artist:
@@ -26,7 +26,12 @@ class Artist:
         for i, song in enumerate(self.songs):
             print(f'** {i+1}. {song.name}')
             
-            
+    def play(self, selected_song = None):
+        
+        top_songs_queue = Queue(self.songs)
+
+        return top_songs_queue.play(selected_song = selected_song)
+
     def share(self):
         pass
 

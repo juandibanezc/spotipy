@@ -1,13 +1,12 @@
 from .files import JPEGFile
+from .spotipy import Spotipy
 
-class Podcast:
+class Podcast(Spotipy):
     def __init__(self, description: str, name: str, duration_ms: int, image_file_path: str, episodes: list, publisher: str):
         self.description = description
-        self.name = name
-        self.__duration_ms = duration_ms
-        self.image = JPEGFile(image_file_path)
         self.episodes = episodes
         self.publisher = publisher
+        super().__init__(name = name, duration_ms = duration_ms, file_path = image_file_path)
         
     
     def __repr__(self) -> str:
@@ -26,8 +25,10 @@ class Podcast:
     def follow(self):
         pass
 
+    # Methods from Spotipy class
+    
+    def download(self):
+        return super().download()
+    
     def share(self):
-        pass
-
-    def see_all_episodes(self):
-        pass
+        return super().share()

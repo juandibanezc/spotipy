@@ -36,11 +36,10 @@ class Album(Spotipy):
         for i, song in enumerate(self.songs):
             print(f'** {i+1}. {song.name}')
     
+    # Methods from Spotipy class
+    
     def share(self):
         return super().share()
     
     def download(self):
         return super().download()
-    
-    def like(self):
-        return super().like()

@@ -9,6 +9,7 @@ class Episode(Spotipy, Multimedia):
         Spotipy.__init__(self, name = name, duration_ms = duration_ms, file_path = image_file_path)
         Multimedia.__init__(self, liked = liked, playing = playing, file_path = audio_file_path)
         self.description = description
+        self.played = False
 
     # Defined self methods of the class Episode
     
@@ -23,6 +24,15 @@ class Episode(Spotipy, Multimedia):
         print('\n* Name:', self.name)
         print('\n* Duration:', self._Spotipy__duration_ms)
         print('\n* Description:', self.description)
+    
+    def skip_forward():
+        pass
+    
+    def skip_back():
+        pass
+    
+    def change_speed():
+        pass
 
     # Defined first heritance methods Spotipy
 
@@ -32,22 +42,10 @@ class Episode(Spotipy, Multimedia):
     def download(self):
         return super().download()
     
-    def play(self):
-        self.playing = not self.playing
-        
-        if self.playing:
-            print(f"You are playing: {self.name}")
-
-            return self.playing
-        else:
-            print(f"You are in Pause")
-
-            return self.playing
-    
-    def like(self):
-        return super().like()
-    
     # Defined second heritance methods Multimedia
+
+    def play(self):
+        return super().play()
     
     def add_to_playlist(self):
         return super().add_to_playlist()

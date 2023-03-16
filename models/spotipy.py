@@ -11,7 +11,3 @@ class Spotipy:
 
     def download(self):
         pass
-
-    def like(self) -> None:
-        
-        self.liked = not self.liked

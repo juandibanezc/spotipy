@@ -40,9 +40,6 @@ class Playlist(Spotipy):
         for i, song in enumerate(self.audio_object.audio_objects):
             print(f'** {i+1}. {song.name}')
 
-    def leave(self):
-        pass
-
     def add_multimedia(self, added_object):
         self.audio_object.audio_objects.append(added_object)
         self.total_songs = len(self.audio_object.audio_objects)
@@ -57,7 +54,7 @@ class Playlist(Spotipy):
                 print(f'You removed {self.audio_object.audio_objects[removed_object].name} from your liked songs')
                 self.audio_object.audio_objects.pop(removed_object)
         else:
-            print(f'You sure that you want to remove {self.audio_object.audio_objects[removed_object].name} from your playlist?')
+            print(f'Are you sure that you want to remove {self.audio_object.audio_objects[removed_object].name} from your playlist?')
             choice = int(input("(1.Y / 2.N)>"))
             if choice == 1:
                 self.audio_object.audio_objects.pop(removed_object)
@@ -70,14 +67,10 @@ class Playlist(Spotipy):
     def remove_collaborators(self):
         pass
  
-
     def play(self, object_selected = None):
         return self.audio_object.play(song_selected = object_selected)
     
     # Methods from Spotipy class
-    
-    def like(self):
-        return super().like()
     
     def download(self):
         return super().download()

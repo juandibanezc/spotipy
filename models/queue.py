@@ -37,10 +37,16 @@ class Queue:
         print(f"You added {new_audio_object.name} to your Queue")
 
     def drop(self, song_selected):
-        pass
+        print(f'You sure that you want to remove {self.audio_objects[song_selected].name} from your Queue?')
+        choice = int(input("(1.Y / 2.N)>"))
+        if choice == 1:
+            self.audio_objects.pop(song_selected)
+        else:
+            pass
 
-    def change_order(self):
-        pass
+    def change_order(self, audio_1, audio_2):
+        self.audio_objects[audio_1], self.audio_objects[audio_2] = self.audio_objects[audio_2], self.audio_objects[audio_1]
+        print("Order changed!!")
     
     def show(self):
         print('\n* Songs or Episodes in Queue:')

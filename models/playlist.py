@@ -25,6 +25,9 @@ class Playlist(Spotipy):
         
     def __repr__(self) -> str:
         return 'Playlist'
+    
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}'
 
     def show(self):
         print('*** Playlist ***\n')

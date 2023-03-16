@@ -20,9 +20,9 @@ class Song(Spotipy, Multimedia):
         return f'{self.__class__.__name__}'
 
     def show(self):
-        print('*** Song ***\n')
+        print('*** Song ***')
         print('\n* Name:', self.name)
-        print('\n* Duration:', self._Spotipy__duration_ms)
+        print(f'\n* Duration: {self._Spotipy__duration_ms} ms')
         print('\n* Artists:')
         for i, artist in enumerate(self.artist):
             print(f'** {i+1}. {artist}')

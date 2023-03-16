@@ -7,7 +7,7 @@ class User:
         
         self.name = name
         self.email = email
-        self.password = password
+        self.__password = password
         self.premium = premium
         self.queue = queue
 

@@ -13,10 +13,10 @@ class Podcast(Spotipy):
         return 'Podcast'
 
     def show(self):
-        print('*** Podcast ***\n')
+        print('*** Podcast ***')
         print('\n* Name:', self.name)
         print('\n* Description:', self.description)
-        print('\n* Total duration:', self.__duration_ms)
+        print(f'\n* Duration: {self._Spotipy__duration_ms} ms')
         print('\n* Publisher:', self.publisher)
         print('\n* Episodes:')
         for i, episode in enumerate(self.episodes):

@@ -6,7 +6,7 @@ from objects_instances import run_instances
 def run_app():
     print("""
   
-  ⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣶⣶⣶⣶⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣶⣶⣶⣶⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀
 ⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀
 ⠀⢀⣾⣿⡿⠿⠛⠛⠛⠉⠉⠉⠉⠛⠛⠛⠿⠿⣿⣿⣿⣿⣿⣷⡀⠀
@@ -106,7 +106,7 @@ def run_app():
                         elif next_command == '5':
                             trick = other_options()
                             original_queue = user_1.queue.audio_objects
-                            current_queue = user_1.queue.audio_objects[user_1.queue.i:]
+                            current_queue = user_1.queue.audio_objects[user_1.queue.i+1:]
                             if trick == '4':
                                 play_action_bool = False
                                 break
@@ -146,14 +146,4 @@ def run_app():
             break
             
 if __name__ == '__main__':
-    run_app()
-            
-            
-                
-                
-
-    
-    
-
-    
-    
+    run_app()   

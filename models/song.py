@@ -1,7 +1,6 @@
 from models.spotipy import Spotipy
 from models.multimedia import Multimedia
 from typing import List
-from .artist import Artist
 
 class Song(Spotipy, Multimedia):
     

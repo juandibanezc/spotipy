@@ -25,6 +25,9 @@ class Playlist(Spotipy):
         
     def __repr__(self) -> str:
         return 'Playlist'
+    
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}'
 
     def show(self):
         print('*** Playlist ***\n')
@@ -40,26 +43,28 @@ class Playlist(Spotipy):
         for i, song in enumerate(self.audio_object.audio_objects):
             print(f'** {i+1}. {song.name}')
 
-    def add_multimedia(self, added_object):
-        self.audio_object.audio_objects.append(added_object)
-        self.total_songs = len(self.audio_object.audio_objects)
-        self._Spotipy__duration_ms = sum([song._Spotipy__duration_ms for song in self.audio_object.audio_objects])
+    def add_multimedia(self, sound_object):
+        if self.name == 'Liked Songs' or self.name == 'Your Episodes':
+            if sound_object.liked and sound_object not in self.audio_object.audio_objects:
+                self.audio_object.audio_objects.append(sound_object)
+                self.total_songs = len(self.audio_object.audio_objects)
+                self._Spotipy__duration_ms = sum([song._Spotipy__duration_ms for song in self.audio_object.audio_objects])
+            else:
+                self.audio_object.audio_objects.remove(sound_object)
+        else:
+            self.audio_object.audio_objects.append(sound_object)
+            self.total_songs = len(self.audio_object.audio_objects)
+            self._Spotipy__duration_ms = sum([song._Spotipy__duration_ms for song in self.audio_object.audio_objects])
         
 
-    def remove_song(self, removed_object):
-        if self.name == 'Liked Songs' or self.name == 'Your Episodes':
-            if removed_object.liked:
-                pass
-            else:
-                print(f'You removed {self.audio_object.audio_objects[removed_object].name} from your liked songs')
-                self.audio_object.audio_objects.pop(removed_object)
+    def remove_song(self, sound_object):
+        print(f'You sure that you want to remove {self.audio_object.audio_objects[sound_object].name} from your playlist?')
+        choice = int(input("(1.Y / 2.N)>"))
+        if choice == 1:
+            self.audio_object.audio_objects.remove(sound_object)
         else:
-            print(f'Are you sure that you want to remove {self.audio_object.audio_objects[removed_object].name} from your playlist?')
-            choice = int(input("(1.Y / 2.N)>"))
-            if choice == 1:
-                self.audio_object.audio_objects.pop(removed_object)
-            else:
-                pass
+            pass
+        
 
     def add_collaborators(self):
         pass

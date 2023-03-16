@@ -101,5 +101,10 @@ def other_options() -> str:
   
   return input(">")
 
-def user_interaction(options:str):
-  pass
+def user_queue(first_selection:int, second_selection:int, list_of_songs:list = [], list_queue: list = []) -> tuple:
+  
+  lenght = len(list_of_songs)
+  
+  curse = len(list_queue)
+
+  return lenght-curse+(first_selection-1), lenght-curse+(second_selection-1)

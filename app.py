@@ -1,7 +1,6 @@
 from models.user import User
 from models.queue import Queue
 from interactive_functions import *
-from models.exceptions import InvalidSelectionError
 from objects_instances import run_instances
 
 def run_app():
@@ -43,18 +42,22 @@ def run_app():
                 selection = MULTI_SELECTION[choice]
             
             except KeyError:
-                raise InvalidSelectionError("Invalid selection. Available options are: 1,2,3,4,5,6")
+                print("Invalid selection. Available options are: 1,2,3,4,5,6,7")
+                continue
             
             if choice in ['3', '5']:
                 if len(selection.audio_object.audio_objects) == 0:
-                    print(f'You dont have any {selection.audio_object.audio_objects} here, please add one')
+                    print(f"You dont have any {'song' if choice == '3' else 'episode'} here, please add one")
                     continue
                 else:
                     selection.show()
             
             else:
                 selection_choice = multi_selection(selection)
-                selection[selection_choice].show()
+                if selection_choice == '3':
+                    continue
+                else:
+                    selection[selection_choice].show()
         
             try:
                 selected_song = int(input("\nSelect a song or episode to play\n"))

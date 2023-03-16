@@ -1,9 +1,9 @@
-from .queue import Queue
+
 
 class User:
 
     def __init__(self, email: str, password: str,  name: str = None, 
-                 premium: bool = False, queue: Queue = None) -> None:
+                 premium: bool = False, queue = None) -> None:
         
         self.name = name
         self.email = email

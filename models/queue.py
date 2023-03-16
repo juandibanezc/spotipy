@@ -50,7 +50,7 @@ class Queue:
     
     def show(self):
         print('\n* Songs or Episodes in Queue:')
-        for j, song in enumerate(self.audio_objects[self.i:]):
+        for j, song in enumerate(self.audio_objects[self.i+1:]):
             print(f'** {j+1}. {song.name}')
     
     def shuffle(self):

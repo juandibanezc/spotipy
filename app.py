@@ -109,6 +109,7 @@ def run_app():
                             current_queue = user_1.queue.audio_objects[user_1.queue.i+1:]
                             if trick == '4':
                                 play_action_bool = False
+                                user_1.queue.audio_objects[user_1.queue.i].playing = False
                                 break
                             elif trick == '1':
                                 user_1.queue.show()
